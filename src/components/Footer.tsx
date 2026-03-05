@@ -19,12 +19,7 @@ export const Footer = () => {
     <footer className="bg-dark border-t border-gold/15 py-12 px-4 sm:px-8 lg:py-20 lg:px-15 pb-10">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr_1.2fr] gap-8 lg:gap-15 mb-10 lg:mb-15">
         <div>
-          <span className="font-serif text-[32px] font-semibold text-gold tracking-[3px] mb-2 block">
-            Or Noir
-          </span>
-          <div className="text-[9px] tracking-[4px] text-white uppercase mb-5">
-            African Jewelry
-          </div>
+          <img src="/or-noir.png" alt="Or Noir African Jewelry" className="h-22 w-auto object-contain mb-2" />
           <p className="text-grey text-xs leading-[1.8] mb-6">
             Marque de bijoux artisanaux faits avec du bronze. Chaque pièce est conçue avec soin, 
             alliant finesse, identité et savoir-faire ancestral.

@@ -8,6 +8,7 @@ import { Toast } from './components/Toast';
 import { ScrollTop } from './components/ScrollTop';
 import { CustomCursor } from './components/CustomCursor';
 import { CartDrawer, CartItem } from './components/CartDrawer';
+import { Loader } from './components/Loader';
 import { HomePage } from './pages/HomePage';
 import { BoutiquePage } from './pages/BoutiquePage';
 import { AProposPage } from './pages/AProposPage';
@@ -133,10 +134,15 @@ function AppInner() {
 }
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
   return (
-    <BrowserRouter>
-      <AppInner />
-    </BrowserRouter>
+    <>
+      {isLoading && <Loader onComplete={() => setIsLoading(false)} />}
+      <BrowserRouter>
+        <AppInner />
+      </BrowserRouter>
+    </>
   );
 }
 

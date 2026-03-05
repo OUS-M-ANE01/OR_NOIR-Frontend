@@ -55,7 +55,7 @@ export const FeaturedBanner = () => {
             </div>
           </div>
           <a
-            href="#"
+            href="/a-propos"
             className="inline-block py-3.5 px-10 border border-gold text-black bg-gold text-[10px] tracking-[3px] uppercase font-semibold no-underline cursor-pointer transition-all hover:bg-transparent hover:text-gold self-start"
             data-cursor-hover
           >

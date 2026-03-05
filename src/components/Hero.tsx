@@ -31,10 +31,10 @@ export const Hero = () => {
             Ancestral
           </h1>
           <a
-            href="#boutique"
+            href="/boutique"
             className="inline-block mt-4 sm:mt-2 py-3 sm:py-3.5 px-7 sm:px-10 border border-gold text-black bg-gold text-[10px] tracking-[3px] uppercase font-semibold no-underline cursor-pointer transition-all opacity-0 animate-[fadeUp_1s_ease_forwards_0.9s] hover:bg-transparent hover:text-gold"
           >
-            Découvrir la Collection
+            Découvrir les Collections
           </a>
         </div>
       </div>

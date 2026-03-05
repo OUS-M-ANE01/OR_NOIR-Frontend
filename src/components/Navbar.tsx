@@ -20,11 +20,8 @@ export const Navbar = ({ cartCount, onCartClick }: NavbarProps) => {
   return (
     <>
       <nav className="sticky top-0 z-[100] bg-black/95 backdrop-blur-xl border-b border-gold/15 flex items-center justify-between px-5 sm:px-10 lg:px-16 h-[64px] sm:h-[72px]">
-        <NavLink to="/" className="font-serif text-[22px] sm:text-[28px] font-semibold text-gold tracking-[3px] no-underline">
-          Or Noir
-          <span className="block text-[9px] tracking-[4px] font-light text-white font-sans mt-1">
-            AFRICAN JEWERLY
-          </span>
+        <NavLink to="/" className="no-underline">
+          <img src="/or-noir.png" alt="Or Noir African Jewelry" className="h-14 sm:h-18 w-auto object-contain" />
         </NavLink>
 
         {/* Desktop nav */}
