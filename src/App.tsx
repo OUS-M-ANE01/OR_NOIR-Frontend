@@ -9,6 +9,7 @@ import { ScrollTop } from './components/ScrollTop';
 import { CustomCursor } from './components/CustomCursor';
 import { CartDrawer, CartItem } from './components/CartDrawer';
 import { Loader } from './components/Loader';
+import { PageTransition } from './components/PageTransition';
 import { HomePage } from './pages/HomePage';
 import { BoutiquePage } from './pages/BoutiquePage';
 import { AProposPage } from './pages/AProposPage';
@@ -84,7 +85,7 @@ function AppInner() {
   };
 
   return (
-    <div className="cursor-none">
+    <div className="md:cursor-none">
       <CustomCursor />
       <ScrollToTop />
       <Announcement />
@@ -94,19 +95,25 @@ function AppInner() {
         <Route
           path="/"
           element={
-            <HomePage
-              onAddToCart={handleAddToCart}
-              onOpenModal={handleOpenModal}
-              onSubscribe={handleNewsletter}
-            />
+            <PageTransition>
+              <HomePage
+                onAddToCart={handleAddToCart}
+                onOpenModal={handleOpenModal}
+                onSubscribe={handleNewsletter}
+              />
+            </PageTransition>
           }
         />
         <Route
           path="/boutique"
-          element={<BoutiquePage onAddToCart={handleAddToCart} cartCount={cartCount} onCartClick={() => setIsCartOpen(true)} />}
+          element={
+            <PageTransition>
+              <BoutiquePage onAddToCart={handleAddToCart} cartCount={cartCount} onCartClick={() => setIsCartOpen(true)} />
+            </PageTransition>
+          }
         />
-        <Route path="/a-propos" element={<AProposPage />} />
-        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/a-propos" element={<PageTransition><AProposPage /></PageTransition>} />
+        <Route path="/contact" element={<PageTransition><ContactPage /></PageTransition>} />
       </Routes>
 
       <Footer />

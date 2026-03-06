@@ -1,5 +1,10 @@
 import { useEffect, useRef } from 'react';
 
+// Detect touch-only devices — no custom cursor needed
+const isTouchDevice = () =>
+  typeof window !== 'undefined' &&
+  (window.matchMedia('(hover: none)').matches || 'ontouchstart' in window);
+
 export const CustomCursor = () => {
   const dotRef = useRef<HTMLDivElement>(null);
   const ringRef = useRef<HTMLDivElement>(null);
@@ -10,6 +15,8 @@ export const CustomCursor = () => {
   const rafId = useRef<number>(0);
 
   useEffect(() => {
+    // Don't run on touch devices
+    if (isTouchDevice()) return;
     const onMove = (e: MouseEvent) => {
       mouse.current = { x: e.clientX, y: e.clientY };
     };
@@ -67,13 +74,13 @@ export const CustomCursor = () => {
       {/* Inner dot — instant */}
       <div
         ref={dotRef}
-        className="fixed top-0 left-0 rounded-full pointer-events-none z-[9999] border-gold"
+        className="fixed top-0 left-0 rounded-full pointer-events-none z-[9999] border-gold hidden md:block"
         style={{ width: 12, height: 12, backgroundColor: '#C9A84C', willChange: 'transform, width, height' }}
       />
       {/* Outer ring — trails with lerp */}
       <div
         ref={ringRef}
-        className="fixed top-0 left-0 w-9 h-9 rounded-full border border-gold/40 pointer-events-none z-[9998]"
+        className="fixed top-0 left-0 w-9 h-9 rounded-full border border-gold/40 pointer-events-none z-[9998] hidden md:block"
         style={{ willChange: 'transform' }}
       />
     </>

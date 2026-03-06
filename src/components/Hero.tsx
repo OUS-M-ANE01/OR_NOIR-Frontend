@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export const Hero = () => {
   return (
     <section className="h-[95vh] grid grid-cols-1 lg:grid-cols-[1fr_1.4fr_1fr] overflow-hidden relative p-0">
@@ -30,12 +32,12 @@ export const Hero = () => {
             <em className="italic text-gold-light">Bronze</em><br />
             Ancestral
           </h1>
-          <a
-            href="/boutique"
+          <Link
+            to="/boutique"
             className="inline-block mt-4 sm:mt-2 py-3 sm:py-3.5 px-7 sm:px-10 border border-gold text-black bg-gold text-[10px] tracking-[3px] uppercase font-semibold no-underline cursor-pointer transition-all opacity-0 animate-[fadeUp_1s_ease_forwards_0.9s] hover:bg-transparent hover:text-gold"
           >
             Découvrir les Collections
-          </a>
+          </Link>
         </div>
       </div>
 

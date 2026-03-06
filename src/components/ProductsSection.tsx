@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Product } from '../types/Product';
 import { ProductCard } from './ProductCard';
 import { SectionHeader } from './SectionHeader';
@@ -36,13 +37,13 @@ export const ProductsSection = ({
       </div>
       {showButton && (
         <div className="text-center mt-12">
-          <a
-            href="/boutique"
+          <Link
+            to="/boutique"
             className="inline-block py-3 px-8 border border-gold text-gold bg-transparent text-[10px] tracking-[3px] uppercase font-semibold no-underline cursor-pointer transition-all hover:bg-gold hover:text-black"
             data-cursor-hover
           >
             Voir tous les produits →
-          </a>
+          </Link>
         </div>
       )}
     </section>

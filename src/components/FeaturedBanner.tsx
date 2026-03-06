@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export const FeaturedBanner = () => {
   return (
     <div className="px-0 lg:px-15" id="about">
@@ -54,13 +56,13 @@ export const FeaturedBanner = () => {
               </div>
             </div>
           </div>
-          <a
-            href="/a-propos"
+          <Link
+            to="/a-propos"
             className="inline-block py-3.5 px-10 border border-gold text-black bg-gold text-[10px] tracking-[3px] uppercase font-semibold no-underline cursor-pointer transition-all hover:bg-transparent hover:text-gold self-start"
             data-cursor-hover
           >
             Découvrir notre histoire
-          </a>
+          </Link>
         </div>
       </div>
     </div>
